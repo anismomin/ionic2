@@ -1,16 +1,30 @@
 <ion-navbar *navbar>
   <ion-title>
-    Home
+    {{title}}
   </ion-title>
 </ion-navbar>
 
 <ion-content class="home">
   <ion-card>
-    <ion-card-header>
-      Card Header
-    </ion-card-header>
+    <img src="build/images/anis-Shamshuddin-Socialmosaic.jpg"/>
     <ion-card-content>
-      Hello World
+        <ion-card-title>
+            {{ author.name }}
+        </ion-card-title>
+        <p>
+         {{ author.description }}
+        </p>
     </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h1>Contact Info</h1>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="#u of author.contact">
+        <ion-icon name="{{u.icon}}" item-left></ion-icon>
+        <h2><a href="{{u.link}}">{{u.item}}</a></h2>
+      </ion-item>
+    </ion-list>
   </ion-card>
 </ion-content>
